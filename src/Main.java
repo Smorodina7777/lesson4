@@ -93,34 +93,26 @@ public class Main {
         System.out.println();
         //Задача 5*
         System.out.println("Задача5*");
-        String time = "05:50";
+        String time = "05:20";
         String time1 = time;
         char[] chars = time.toCharArray();
         if (chars[0] == '0') {
             time = time.substring(1, time.length());
         }
-        String[] hMin = new String[2];
-        hMin = time.split(":");
+        String[] hMin = time.split(":");
         int hour = Integer.parseInt(hMin[0]);
         int minute = Integer.parseInt(hMin[1]);
-
         cnt = -1;
         int[][] timeList = new int[24][60];
-        for (int i = 0; i < 24; i++) {
-            if (i > hour) {
-                break;
-            }
+        for (int i = 0; i <= hour; i++) {
             for (int j = 0; j < 60; j++) {
+                if ((i < hour || (i == hour && j <= minute)) && (i / 10 == j % 10 && i % 10 == j / 10)) {
+                    cnt++;
 
-                if (i / 10 == j % 10 && i % 10 == j / 10) {
-                    if (i < hour || (i == hour && j <= minute)) {
-                        cnt++;
-                    }
                 }
             }
         }
         System.out.println("Время " + time1 + " - Всего случаев: " + cnt);
-
         System.out.println();
         //Задача 5
         System.out.println("Задача 5");
@@ -154,7 +146,11 @@ public class Main {
         System.out.println();
         //Задача 8*
         System.out.println("Задача8*");
-        Recursion.summa(156);
+        int number = 156;
+        String numb = Integer.toString(number);
+        String reverseNumb = new StringBuilder(numb).reverse().toString();
+        int numer = Integer.parseInt(reverseNumb);
+        Recursion.summa(numer);
 
 
     }

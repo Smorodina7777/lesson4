@@ -29,7 +29,7 @@ public class Recursion {
     static int sumN = 0;
 public static int summa(int num){
     if (num <10){
-        System.out.println(num+" = "+sumN+num);
+        System.out.println(num+" = "+(sumN+num));
         return num;
     }
     int n= num%10;
