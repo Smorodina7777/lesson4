@@ -76,7 +76,6 @@ public class Main {
         //Задача 4
         System.out.println("Задача4");
         String str = "У меня тут шалаш. Посмотришь?";
-        str = str.toLowerCase();
         str = str.replace(",", " ");
         str = str.replace(".", " ");
         str = str.replace("!", " ");
@@ -85,7 +84,7 @@ public class Main {
         int cnt = 0;
         for (int i = 0; i < strList.length; i++) {
             String reverseStr = new StringBuilder(strList[i]).reverse().toString();
-            if (strList[i].equals(reverseStr) && strList[i].length() > 1) {
+            if (strList[i].equalsIgnoreCase(reverseStr) && strList[i].length() > 1) {
                 cnt++;
             }
         }
