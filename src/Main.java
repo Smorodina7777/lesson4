@@ -76,10 +76,7 @@ public class Main {
         //Задача 4
         System.out.println("Задача4");
         String str = "У меня тут шалаш. Посмотришь?";
-        str = str.replace(",", " ");
-        str = str.replace(".", " ");
-        str = str.replace("!", " ");
-        str = str.replace("?", " ");
+        str = str.replaceAll("[^a-zA-Z0-9а-яА-Я]", " ");
         String[] strList = str.split(" ");
         int cnt = 0;
         for (int i = 0; i < strList.length; i++) {
