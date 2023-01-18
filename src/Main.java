@@ -6,7 +6,11 @@ public class Main {
         System.out.println("Задача1");
         for (int i = 1; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
-                System.out.print(i + " x " + j + " = " + (i * j) + "  ");
+                if (i*j<10) {
+                    System.out.print(i + " x " + j + " = " + (i * j) + "   ");
+                }else {
+                    System.out.print(i + " x " + j + " = " + (i * j) + "  ");
+                }
             }
             System.out.println();
         }
