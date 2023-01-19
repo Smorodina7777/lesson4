@@ -104,14 +104,19 @@ public class Main {
         int minute = Integer.parseInt(hMin[1]);
         cnt = -1;
         int[][] timeList = new int[24][60];
-        for (int i = 0; i <= hour; i++) {
+        for (int i = 0; i < hour; i++) {
+            if (i < 6 || (i > 9 && i < 16) || i > 19) {
+                cnt++;
+            }
+        }
             for (int j = 0; j < 60; j++) {
-                if ((i < hour || (i == hour && j <= minute)) && (i / 10 == j % 10 && i % 10 == j / 10)) {
+
+                if ((j <= minute) && (hour / 10 == j % 10 && hour % 10 == j / 10)) {
                     cnt++;
 
                 }
             }
-        }
+
         System.out.println("Время " + time1 + " - Всего случаев: " + cnt);
         System.out.println();
         //Задача 5
